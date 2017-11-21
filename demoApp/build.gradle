@@ -16,7 +16,6 @@ buildscript {
 version "0.1"
 group "demoapp"
 
-apply plugin:"eclipse"
 apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
@@ -69,4 +68,10 @@ task wrapper(type: Wrapper) {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+grails {
+    plugins {
+        compile project(':plugin')
+    }
 }
